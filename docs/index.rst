@@ -11,6 +11,7 @@ This is our new project
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
    content/average-squares-docs
 
 
