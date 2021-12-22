@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+
 """Computation of weighted average of squares."""
 
 
@@ -50,13 +52,51 @@ def convert_numbers(list_of_strings):
     return [int(number_string) for number_string in all_numbers]
 
 
-if __name__ == "__main__":
-    numbers_strings = ["1","2","4"]
-    weight_strings = ["1","1","1"]        
+"""Only numbers"""
+# if __name__ == "__main__":
+#     numbers_strings = ["1","2","4"]
+#     weight_strings = ["1","1","1"]        
     
-    numbers = convert_numbers(numbers_strings)
-    weights = convert_numbers(weight_strings)
+#     numbers = convert_numbers(numbers_strings)
+#     weights = convert_numbers(weight_strings)
+
+#     result = average_of_squares(numbers, weights)
+#     print(result)
+
+"""Weights as optional argument"""
+# if __name__ == '__main__':
+#     parser = ArgumentParser(description="calculate squares")
+#     # required
+#     parser.add_argument('numbers', nargs = '+', type = float, help = "introduce list of numbers")
+#     # optional arguments
+#     parser.add_argument('--weights', '-w', nargs = '+', type=float, help = "introduce  list of weights")
+#     arguments = parser.parse_args()
+
+#     result = average_of_squares(arguments.numbers, arguments.weights)
+#     print(result)
+
+
+"""Read files as arguments"""
+
+# if __name__ == "__main__":
+#     parser = ArgumentParser(description="calculate average mean squares")
+#     parser.add_argument('numbers', help="text with list of numbers")
+#     parser.add_argument('--weights', '-w', help="text with list of weights")
+#     arguments = parser.parse_args()
+
+#     with open(arguments.numbers, 'r') as numbers_file:
+#         numbers_string = numbers_file.readlines()
+#         numbers = convert_numbers(numbers_string)
+
+#     weights = None
+#     if arguments.weights:
+#         with open(arguments.weights, 'r') as weights_file:
+#             weights_string = weights_file.readlines()
+#             weights = convert_numbers(weights_string)
+
+#     result = average_of_squares(numbers, weights)
+#     print(result)
+
+
+ 
     
-    result = average_of_squares(numbers, weights)
-    
-    print(result)
